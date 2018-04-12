@@ -90,7 +90,7 @@ namespace MathsGame.View
 
         private void btnTrue_Click(object sender, RoutedEventArgs e)
         {
-            if (mode == 1) // mode - 1 so correct answer is True
+            if (mode == 1) // mode = 1 so correct answer is True
             {
                 txtScore.Text = String.Format("Score: {0}".ToUpper(), ++Score);
                 txtState.Text = String.Format("{0}", ++State);
@@ -109,21 +109,23 @@ namespace MathsGame.View
 
         private void Playing()
         {
+            // Generates a random number between  1 and 4 and uses it to select which operator will be used in the calculation
             Random rnd = new Random();
             int value = rnd.Next(1, 4);
            // int value = 1; // for testing
             if (value == 1)// +
             {
-
+                // staticNums generate numbers between 1 and 9 to create simple maths problems
                 staticNumA = rnd.Next(1, 9);
                 staticNumB = rnd.Next(0, staticNumA - 1);
-                staticResult = staticNumA + staticNumB;
-                staticRandomResult = rnd.Next(0, 99);
+                staticResult = staticNumA + staticNumB;// calculation to determine the true answer from the generated numbers 
+                staticRandomResult = rnd.Next(0, 81);// random result is used when the answer is false 
                // TextBlock myBlock = new TextBlock();
                 mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
 
                 if (mode == 0)
                 {
+                    // if mode is equal to 0 the answer will be false using the random result
                     //txtMath.Text = "Hello world"; // for testing
                     txtMath.Text = String.Format("{0} + {1} = {2}", staticNumA, staticNumB, staticRandomResult);
                     
@@ -134,11 +136,11 @@ namespace MathsGame.View
             }
             if (value == 2)// -
             {
-
+                // staticNums generate numbers between 1 and 9 to create simple maths problems
                 staticNumA = rnd.Next(1, 9);
                 staticNumB = rnd.Next(0, staticNumA - 1);
                 staticResult = staticNumA - staticNumB;
-                staticRandomResult = rnd.Next(0, 99);
+                staticRandomResult = rnd.Next(0, 81);
 
                 mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
 
@@ -155,7 +157,7 @@ namespace MathsGame.View
                 staticNumA = rnd.Next(1, 9);
                 staticNumB = rnd.Next(0, staticNumA - 1);
                 staticResult = staticNumA * staticNumB;
-                staticRandomResult = rnd.Next(0, 99);
+                staticRandomResult = rnd.Next(0, 81);
 
                 mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
 
@@ -171,7 +173,7 @@ namespace MathsGame.View
                 staticNumA = rnd.Next(1, 9);
                 staticNumB = rnd.Next(1, staticNumA); // cant divide by 0
                 staticResult = staticNumA / staticNumB;
-                staticRandomResult = rnd.Next(0, 99);
+                staticRandomResult = rnd.Next(0, 81);
 
                 mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
 
@@ -182,12 +184,12 @@ namespace MathsGame.View
                 else
                     txtMath.Text = String.Format("{0} / {1} = {2}", staticNumA, staticNumB, staticResult);
             }
-            setupProgressBar();
+            setupProgressBar(); // restarts the progress bar for the next question
         }
 
         private void btnFalse_Click(object sender, RoutedEventArgs e)
         {
-            if (mode == 1) // mode - 1 so correct answer is True
+            if (mode == 0) // mode = 0 so correct answer is false
             {
                 txtScore.Text = String.Format("Score: {0}".ToUpper(), ++Score);
                 txtState.Text = String.Format("{0}", ++State);

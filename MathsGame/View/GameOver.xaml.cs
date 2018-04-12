@@ -33,7 +33,7 @@ namespace MathsGame.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += GameOver_BackRequested;
-            highScore = e.Parameter.ToString();
+            highScore = e.Parameter as String;
             TempHighScore = SimpleMaths.Maths.LoadSettings("highscore");
             if (int.Parse(highScore) > int.Parse(TempHighScore))
             {
