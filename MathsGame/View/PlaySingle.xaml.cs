@@ -111,7 +111,7 @@ namespace MathsGame.View
         {
             // Generates a random number between  1 and 4 and uses it to select which operator will be used in the calculation
             Random rnd = new Random();
-            int value = rnd.Next(1, 4);
+            int value = rnd.Next(1, 5);
            // int value = 1; // for testing
             if (value == 1)// +
             {
@@ -121,7 +121,7 @@ namespace MathsGame.View
                 staticResult = staticNumA + staticNumB;// calculation to determine the true answer from the generated numbers 
                 staticRandomResult = rnd.Next(0, 81);// random result is used when the answer is false 
                // TextBlock myBlock = new TextBlock();
-                mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
+                mode = rnd.Next(0, 2);// Random Mode show answer if mode = 0 show incorrect answer
 
                 if (mode == 0)
                 {
