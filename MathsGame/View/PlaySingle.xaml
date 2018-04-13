@@ -16,7 +16,7 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Margin="8 4 8 4">
-                <TextBlock x:Name="txtScore" Text="Score:0" FontSize="30" Foreground="White" FontWeight="ExtraBold" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="txtScore" Text="SCORE:0" FontSize="30" Foreground="White" FontWeight="ExtraBold" HorizontalAlignment="Left"/>
                 <TextBlock x:Name="txtHighScore" Text="Highscore:0" FontSize="30" Foreground="White" FontWeight="ExtraBold" HorizontalAlignment="Right"/>
 
             </Grid>

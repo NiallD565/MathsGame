@@ -63,7 +63,7 @@ namespace MathsGame
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
 
-            Frame.Navigate(typeof(PlaySingle));
+            //Frame.Navigate(typeof(PlaySingle));
 
             if (SimpleMaths.Maths.mode == 0)// depending on which mode is selected the user will be directed to the appropriate playing page
                 Frame.Navigate(typeof(View.PlaySingle));

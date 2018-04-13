@@ -28,15 +28,13 @@ namespace MathsGame.View
             this.InitializeComponent();
         }
 
-        private void chkMode1_checked(object sender, RoutedEventArgs e)
+        private void btnMode1_Click(object sender, RoutedEventArgs e)
         {
-            chkMode1.IsChecked = false;
             SimpleMaths.Maths.SaveSettings("mode", "0");
         }
 
-        private void chkMode2_checked(object sender, RoutedEventArgs e)
+        private void btnMode2_Click(object sender, RoutedEventArgs e)
         {
-            chkMode2.IsChecked = false;
             SimpleMaths.Maths.SaveSettings("mode", "1");
         }
 
@@ -49,7 +47,7 @@ namespace MathsGame.View
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested -= option_BackRequested;
-            if (SimpleMaths.Maths.mode == 0)
+            /*if (SimpleMaths.Maths.mode == 0)
             {
                 chkMode1.IsChecked = true;
                 chkMode2.IsChecked = false;
@@ -59,7 +57,7 @@ namespace MathsGame.View
                 chkMode1.IsChecked = false;
                 chkMode2.IsChecked = true;
             }
-
+            */
             int sliderValue = SimpleMaths.Maths.speed;
             slider.Value = sliderValue / 10;
         }
