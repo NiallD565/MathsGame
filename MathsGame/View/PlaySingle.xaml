@@ -10,6 +10,9 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="Black">
             <Grid.RowDefinitions>
+                <!-- * sets the size proportional to the grid -->
+                <!-- auto gives as much height as is requred by the element -->
+                <!-- 2* gives the proportional sizes of the space -->
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>

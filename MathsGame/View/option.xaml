@@ -10,6 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Background="Black">
             <Grid.RowDefinitions>
+                <!-- auto gives as much height as is requred by the element -->
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>

@@ -23,17 +23,23 @@
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
+                    <!-- * sets the size proportional to the grid -->
+                    <!-- auto gives as much height as is requred by the element -->
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                <!-- state is always 1 ahead of the score to signify the level the user is on -->
                 <TextBlock x:Name="txtState" Text="1" FontSize="30" Foreground="White" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <!-- Progress bar set to countdown by the default value or the value set in the options page -->
                 <ProgressBar x:Name="progreesBar" IsIndeterminate="False" Maximum="9999" Height="10" Grid.Row="1" Margin="8 0" Value="9999" SmallChange="1"/>
             </Grid>
             <Grid Grid.Row="2">
+                <!-- Place holder for the randomly generated numbers -->
                 <TextBlock x:Name="txtMath" Text="3 ... 5 = 8" FontSize="40" Foreground="White" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="3" Margin="50">
                 <StackPanel Orientation="Vertical">
+                    <!-- Series of buttons when clicked will be inserted into the equation anf determine whether the user is correct or not -->
                     <Button x:Name="btnPlus" BorderBrush="White" BorderThickness="4" Background="Red" Content="+" HorizontalAlignment="Center"
                             VerticalAlignment="Center" Padding="80 5" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnPlus_Click"/>
                     <Button x:Name="btnMinus" BorderBrush="White" Margin="0 20 0 0" BorderThickness="4" Background="Green" Content="-" HorizontalAlignment="Center"
@@ -42,7 +48,6 @@
                             VerticalAlignment="Center" Padding="80 5" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnMultiply_Click"/>
                     <Button x:Name="btnDivide" BorderBrush="White" Margin="0 20 0 0" BorderThickness="4" Background="Purple" Content="÷" HorizontalAlignment="Center"
                             VerticalAlignment="Center" Padding="80 5" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnDivide_Click"/>
-
                 </StackPanel>
             </Grid>
         </Grid>
