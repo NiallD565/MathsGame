@@ -76,9 +76,9 @@ namespace MathsGame.View
             dispatcherTimer.Stop();// timer is stopped
             dispatcherTimer = null;// timer is set to 0
 
-            var msg = new MessageDialog("Are you handsome?");
+            var msg = new MessageDialog("Would you like to go back?");// when the user hits the back button they'll be ask would they like to go back
             var okBtn = new UICommand("Yes");
-            var kindaBtn = new UICommand("Kinda");
+            var kindaBtn = new UICommand("No");
             msg.Commands.Add(okBtn);
             msg.Commands.Add(kindaBtn);
             IUICommand result = await msg.ShowAsync();

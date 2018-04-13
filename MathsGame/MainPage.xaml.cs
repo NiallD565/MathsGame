@@ -46,9 +46,9 @@ namespace MathsGame
         private async void MainPage_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
         {
             e.Handled = true;
-            var msg = new MessageDialog("Are you handsome?");
+            var msg = new MessageDialog("Would you like to exit?");// when the user hits the back button they'll be ask would they like to exit
             var okBtn = new UICommand("Yes");
-            var kindaBtn = new UICommand("Kinda");
+            var kindaBtn = new UICommand("No");
             msg.Commands.Add(okBtn);
             msg.Commands.Add(kindaBtn);
             IUICommand result = await msg.ShowAsync();
