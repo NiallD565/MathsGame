@@ -29,7 +29,7 @@
                 <ProgressBar x:Name="progressBar" Grid.Row="2" IsIndeterminate="False" Maximum="9999" Minimum="0" Height="10" Margin="8 0 8 0" Value="9999" SmallChange="1"/>
             </Grid>
             <Grid Grid.Row="2">
-                <TextBlock x:Name="txtMath" Text="5 + 4 = 9" FontSize="40" Foreground="White" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="txtMath" Text="5 + 4 = 9" FontSize="50" Foreground="White" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="3" VerticalAlignment="Top">
                 <Button x:Name="btnTrue" BorderBrush="Red" BorderThickness="4" Margin="25 5 25 5" Background="Green" Content="True" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="20 5 20 5"

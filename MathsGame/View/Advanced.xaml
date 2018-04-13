@@ -40,7 +40,7 @@
                             VerticalAlignment="Center" Padding="80 5" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnMinus_Click"/>
                     <Button x:Name="btnMultiply" BorderBrush="White" Margin="0 20 0 0" BorderThickness="4" Background="Blue" Content="X" HorizontalAlignment="Center"
                             VerticalAlignment="Center" Padding="80 5" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnMultiply_Click"/>
-                    <Button x:Name="btnDivide" BorderBrush="White" Margin="0 20 0 0" BorderThickness="4" Background="Purple" Content="/" HorizontalAlignment="Center"
+                    <Button x:Name="btnDivide" BorderBrush="White" Margin="0 20 0 0" BorderThickness="4" Background="Purple" Content="÷" HorizontalAlignment="Center"
                             VerticalAlignment="Center" Padding="80 5" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnDivide_Click"/>
 
                 </StackPanel>
