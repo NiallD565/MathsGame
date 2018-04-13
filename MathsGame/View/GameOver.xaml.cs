@@ -33,13 +33,13 @@ namespace MathsGame.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += GameOver_BackRequested;
-            highScore = e.Parameter as String;
-            TempHighScore = SimpleMaths.Maths.LoadSettings("highscore");
+            highScore = e.Parameter as String;// Take the score passed in from the true and false buttons and assign it to the local variable
+            TempHighScore = SimpleMaths.Maths.LoadSettings("highscore");// Take the highscore from Math.cs and assign it to the temperary variable
             if (int.Parse(highScore) > int.Parse(TempHighScore))
             {
                 SimpleMaths.Maths.SaveSettings("highscore", highScore);
             }
-
+           
             Score.Text = highScore;
         }
 
@@ -67,7 +67,7 @@ namespace MathsGame.View
 
         private void btnTryAgain_Click(object sender, RoutedEventArgs e)
         {
-            if (SimpleMaths.Maths.mode == 1)
+            if (SimpleMaths.Maths.mode == 1)// depending on which mode is selected the user will be directed to the appropriate playing page
             {
                 Frame.Navigate(typeof(Advanced));
             }

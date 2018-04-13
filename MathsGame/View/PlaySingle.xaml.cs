@@ -94,15 +94,15 @@ namespace MathsGame.View
             {
                 txtScore.Text = String.Format("Score: {0}".ToUpper(), ++Score);
                 txtState.Text = String.Format("{0}", ++State);
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer set to 0
                 Playing();
             }
             else
             {
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
-
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer is set to 0
+                // Navigate to game over page and pass the score to the OnNavigate constructor arguements to be set to the new highscore
                 Frame.Navigate(typeof(GameOver), Score.ToString());
             }
         }
@@ -116,7 +116,7 @@ namespace MathsGame.View
             if (value == 1)// +
             {
                 // staticNums generate numbers between 1 and 9 to create simple maths problems
-                staticNumA = rnd.Next(1, 9);
+                staticNumA = rnd.Next(1, 10);
                 staticNumB = rnd.Next(0, staticNumA - 1);
                 staticResult = staticNumA + staticNumB;// calculation to determine the true answer from the generated numbers 
                 staticRandomResult = rnd.Next(0, 81);// random result is used when the answer is false 
@@ -137,12 +137,12 @@ namespace MathsGame.View
             if (value == 2)// -
             {
                 // staticNums generate numbers between 1 and 9 to create simple maths problems
-                staticNumA = rnd.Next(1, 9);
+                staticNumA = rnd.Next(1, 10);
                 staticNumB = rnd.Next(0, staticNumA - 1);
                 staticResult = staticNumA - staticNumB;
                 staticRandomResult = rnd.Next(0, 81);
 
-                mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
+                mode = rnd.Next(0, 2);// Random Mode show answer if mode = 0 show incorrect answer
 
                 if (mode == 0)
                 {
@@ -154,12 +154,12 @@ namespace MathsGame.View
             if (value == 3)// *
             {
 
-                staticNumA = rnd.Next(1, 9);
+                staticNumA = rnd.Next(1, 10);
                 staticNumB = rnd.Next(0, staticNumA - 1);
                 staticResult = staticNumA * staticNumB;
                 staticRandomResult = rnd.Next(0, 81);
 
-                mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
+                mode = rnd.Next(0, 2);// Random Mode show answer if mode = 0 show incorrect answer
 
                 if (mode == 0)
                 {
@@ -170,12 +170,12 @@ namespace MathsGame.View
             }
             if (value == 4)// /
             {
-                staticNumA = rnd.Next(1, 9);
+                staticNumA = rnd.Next(1, 10);
                 staticNumB = rnd.Next(1, staticNumA); // cant divide by 0
                 staticResult = staticNumA / staticNumB;
                 staticRandomResult = rnd.Next(0, 81);
 
-                mode = rnd.Next(0, 1);// Random Mode show answer if mode = 0 show incorrect answer
+                mode = rnd.Next(0, 2);// Random Mode show answer if mode = 0 show incorrect answer
 
                 if (mode == 0)
                 {
@@ -193,15 +193,15 @@ namespace MathsGame.View
             {
                 txtScore.Text = String.Format("Score: {0}".ToUpper(), ++Score);
                 txtState.Text = String.Format("{0}", ++State);
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;/// timer is set to 0
                 Playing();
             }
             else
             {
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
-
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer is set to 0
+                // Navigate to game over page and pass the score to the OnNavigate constructor arguements to be set to the new highscore
                 Frame.Navigate(typeof(GameOver), Score.ToString());
             }
         }

@@ -65,16 +65,16 @@ namespace MathsGame
 
             Frame.Navigate(typeof(PlaySingle));
 
-            /*if (SimpleMaths.Maths.mode == 0)
+            if (SimpleMaths.Maths.mode == 0)// depending on which mode is selected the user will be directed to the appropriate playing page
                 Frame.Navigate(typeof(View.PlaySingle));
             else
                 Frame.Navigate(typeof(View.Advanced));
-                */
+               
         }
 
         private void btnOption_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(option));
+            Frame.Navigate(typeof(option));// brings the player to the options page
         }
     }
 }

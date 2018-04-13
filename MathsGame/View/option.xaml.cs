@@ -69,6 +69,7 @@ namespace MathsGame.View
             e.Handled = true;
             if (Frame.CanGoBack)
             {
+                // navigates to the most recent frame in the history
                 Frame.GoBack();
             }
         }

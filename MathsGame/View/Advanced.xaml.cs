@@ -61,11 +61,11 @@ namespace MathsGame.View
             return randomNum.Next(1, 9);
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested -= PlayAdvanced_BackRequested;
         }
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += PlayAdvanced_BackRequested;
             highScore = int.Parse(SimpleMaths.Maths.LoadSettings("HighScore"));
@@ -76,7 +76,8 @@ namespace MathsGame.View
 
         private int randomValue()
         {
-            return randomNum.Next(0, 3);
+            // Generates a random number between  1 and 3 and uses it to select which operator will be used in the calculation
+            return randomNum.Next(0, 4);
         }
 
         private void Playing()
@@ -95,6 +96,7 @@ namespace MathsGame.View
             else
                 result = numberA / numberB;
 
+            // staticNums generate numbers between 1 and 9 to create simple maths problems
             staticNumA = numberA;
             staticNumB = numberB;
             staticResult = result;
@@ -121,13 +123,9 @@ namespace MathsGame.View
             }
         }
 
-        private void btnPlus_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
-        {
-
-        }
-
         private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
+            // take the given numbers and check if the operator is correct
             if (staticNumA + staticNumB == staticResult)
             {
                 txtHighScore.Text = String.Format("Score: (0)".ToUpper(), ++Score);
@@ -138,14 +136,16 @@ namespace MathsGame.View
             }
             else
             {
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer is set to 0
+                // Navigate to game over page and pass the score to the OnNavigate constructor arguements to be set to the new highscore
                 Frame.Navigate(typeof(GameOver), Score.ToString());
             }
         }
 
         private void btnMinus_Click(object sender, RoutedEventArgs e)
         {
+            // take the given numbers and check if the operator is correct
             if (staticNumA - staticNumB == staticResult)
             {
                 txtHighScore.Text = String.Format("Score: (0)".ToUpper(), ++Score);
@@ -156,14 +156,16 @@ namespace MathsGame.View
             }
             else
             {
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer is set to 0
+                // Navigate to game over page and pass the score to the OnNavigate constructor arguements to be set to the new highscore
                 Frame.Navigate(typeof(GameOver), Score.ToString());
             }
         }
 
         private void btnMultiply_Click(object sender, RoutedEventArgs e)
         {
+            // take the given numbers and check if the operator is correct
             if (staticNumA * staticNumB == staticResult)
             {
                 txtHighScore.Text = String.Format("Score: (0)".ToUpper(), ++Score);
@@ -174,32 +176,38 @@ namespace MathsGame.View
             }
             else
             {
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer is set to 0
+                // Navigate to game over page and pass the score to the OnNavigate constructor arguements to be set to the new highscore
                 Frame.Navigate(typeof(GameOver), Score.ToString());
             }
         }
 
         private void btnDivide_Click(object sender, RoutedEventArgs e)
         {
-            if (staticNumA / staticNumB == staticResult)
+            try
             {
-                txtHighScore.Text = String.Format("Score: (0)".ToUpper(), ++Score);
-                txtState.Text = String.Format("{0}", ++state);
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
-                Playing();
+                // take the given numbers and check if the operator is correct
+                if (staticNumA / staticNumB == staticResult)
+                {
+                    txtHighScore.Text = String.Format("Score: (0)".ToUpper(), ++Score);
+                    txtState.Text = String.Format("{0}", ++state);
+                    dispatcherTimer.Stop();
+                    dispatcherTimer = null;
+                    Playing();
+                }
+                else
+                {
+                    dispatcherTimer.Stop();// timer is stopped
+                    dispatcherTimer = null;// timer is set to 0
+                    // Navigate to game over page and pass the score to the OnNavigate constructor arguements to be set to the new highscore
+                    Frame.Navigate(typeof(GameOver), Score.ToString());
+                }
             }
-            else
+            catch (DivideByZeroException)
             {
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
                 Frame.Navigate(typeof(GameOver), Score.ToString());
             }
         }
-        /*catch(DivideByZeroException)
-        {
-                            Frame.Navigate(typeof(GameOver), Score.ToString());
-        }*/
     }
 }
