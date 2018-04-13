@@ -33,7 +33,8 @@ namespace MathsGame.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += GameOver_BackRequested;
-         /*   highScore = e.Parameter as String;// Take the score passed in from the true and false buttons where it was converted to a string and assign it to the local variable
+            /*
+            highScore = e.Parameter as String;// Take the score passed in from the true and false buttons where it was converted to a string and assign it to the local variable
             TempHighScore = SimpleMaths.Maths.LoadSettings("highscore");// Take the highscore from Math.cs and assign it to the temperary variable
             if (int.Parse(highScore) > int.Parse(TempHighScore))// input string is not int the correct format error
             {

@@ -59,6 +59,11 @@ namespace MathsGame.View
 
         private void DispatcherTimer_Tick(object sender, object e)
         {
+            // the speed is not set in the options the default is set here
+            if (SimpleMaths.Maths.speed == 0)
+            {
+                SimpleMaths.Maths.speed = 10;
+            }
             // subtracts the value of the speed set in the options from the progress every tick
             progressBar.Value -= SimpleMaths.Maths.speed;
             if (progressBar.Value <= 0)

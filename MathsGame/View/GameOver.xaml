@@ -22,17 +22,18 @@
                                TextWrapping="Wrap" FontSize="40" TextAlignment="Center"/>
                 </StackPanel>
             </Grid>
+            <!-- score taken from the play single or advanced pages conveted to text -->
             <Grid Grid.Row="1">
                 <TextBlock x:Name="Score" VerticalAlignment="Center" HorizontalAlignment="Center" Text="10" Foreground="White" FontWeight="ExtraBold"
                                TextWrapping="Wrap" FontSize="80" TextAlignment="Center" Margin="0 20 0 0"/>
             </Grid>
+            <!-- Buttons used to restart or go to the home page -->
             <Grid Grid.Row="2">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <Button x:Name="btnTryAgain" BorderBrush="White" BorderThickness="4" Margin="0 20 0 0" Background="Green" Content="Try Again" HorizontalAlignment="Center" VerticalAlignment="Center"
                             Padding="10" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnTryAgain_Click"/>
                     <Button x:Name="btnHome" BorderBrush="White" BorderThickness="4" Margin="0 20 0 0" Background="Green" Content="Home" HorizontalAlignment="Center" VerticalAlignment="Center"
                             Padding="35 10" Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnHome_Click"/>
-
                 </StackPanel>
             </Grid>
         </Grid>
