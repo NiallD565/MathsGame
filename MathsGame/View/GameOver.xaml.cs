@@ -24,7 +24,7 @@ namespace MathsGame.View
     /// </summary>
     public sealed partial class GameOver : Page
     {
-        private String highScore, TempHighScore;
+        //private String highScore, TempHighScore;
         public GameOver()
         {
             this.InitializeComponent();

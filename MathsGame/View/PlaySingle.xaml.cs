@@ -178,7 +178,10 @@ namespace MathsGame.View
                 staticRandomResult = rnd.Next(0, 81);
 
                 mode = rnd.Next(0, 2);// Random Mode show answer if mode = 0 show incorrect answer
-
+                if (staticNumA % staticNumB != 0)// if modulous is not = 0 then random answer is selected 
+                {
+                    mode = 0;
+                }
                 if (mode == 0)
                 {
                     txtMath.Text = String.Format("{0} ÷ {1} = {2}", staticNumA, staticNumB, staticRandomResult);
