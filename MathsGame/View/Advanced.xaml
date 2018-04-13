@@ -16,7 +16,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Margin="8 4">
-                <TextBlock x:Name="txtScore" Text="Score: 0" FontSize="30" Foreground="White"
+                <TextBlock x:Name="txtScore" Text="SCORE: 0" FontSize="30" Foreground="White"
                            FontWeight="ExtraBold" HorizontalAlignment="Left"/>
                 <TextBlock x:Name="txtHighScore" Text="Highest: 0" FontSize="30" Foreground="White"
                            FontWeight="ExtraBold" HorizontalAlignment="Right"/>
@@ -24,7 +24,7 @@
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <!-- * sets the size proportional to the grid -->
-                    <!-- auto gives as much height as is requred by the element -->
+                    <!-- auto gives as much height as is reqiured by the element -->
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>

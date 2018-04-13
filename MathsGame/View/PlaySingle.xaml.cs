@@ -99,6 +99,9 @@ namespace MathsGame.View
         {
             if (mode == 1) // mode = 1 so correct answer is True
             {
+                Correct.Source = new Uri("ms-appx:///Assets/Correct.mp3");
+                Correct.Play();
+
                 txtScore.Text = String.Format("Score: {0}".ToUpper(), ++Score);
                 txtState.Text = String.Format("{0}", ++State);
                 dispatcherTimer.Stop();// timer is stopped
@@ -201,6 +204,9 @@ namespace MathsGame.View
         {
             if (mode == 0) // mode = 0 so correct answer is false
             {
+                Correct.Source = new Uri("ms-appx:///Assets/Correct.mp3");
+                Correct.Play();
+
                 txtScore.Text = String.Format("Score: {0}".ToUpper(), ++Score);
                 txtState.Text = String.Format("{0}", ++State);
                 dispatcherTimer.Stop();// timer is stopped

@@ -151,8 +151,8 @@ namespace MathsGame.View
             {
                 txtHighScore.Text = String.Format("Score: (0)".ToUpper(), ++Score);
                 txtState.Text = String.Format("{0}", ++state);
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer is set to 0
                 Playing();
             }
             else

@@ -74,11 +74,12 @@ namespace MathsGame.View
 
         private void slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            SimpleMaths.Maths.speed = int.Parse(slider.Value.ToString()) * 10;
-            SimpleMaths.Maths.SaveSettings("speed", SimpleMaths.Maths.speed.ToString());
+            SimpleMaths.Maths.speed = int.Parse(slider.Value.ToString()) * 10;// sets the decrement of the progress bar to *10 of what the user selects
+            SimpleMaths.Maths.SaveSettings("speed", SimpleMaths.Maths.speed.ToString());// saves the speed locally 
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
+            // navigate to the main page
             Frame.Navigate(typeof(MainPage));
         }
     }

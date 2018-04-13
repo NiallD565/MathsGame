@@ -39,6 +39,7 @@
             </Grid>
             <!-- Buttons used for the true or false -->
             <Grid Grid.Row="3" VerticalAlignment="Top">
+                <MediaElement x:Name="Correct"/>
                 <Button x:Name="btnTrue" BorderBrush="Red" BorderThickness="4" Margin="25 5 25 5" Background="Green" Content="True" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="20 5 20 5"
                         Foreground="White" FontWeight="ExtraBold" FontSize="30" Click="btnTrue_Click" />
                 <Button x:Name="btnFalse" BorderBrush="Green" BorderThickness="4" Margin="25 5 25 5" Background="Red" Content="False" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="20 5 20 5"

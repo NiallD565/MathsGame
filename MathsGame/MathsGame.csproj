@@ -120,6 +120,7 @@
     <None Include="MathsGame_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Correct.mp3" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
