@@ -165,10 +165,10 @@ namespace MathsGame.View
 
                 if (mode == 0)
                 {
-                    txtMath.Text = String.Format("{0} * {1} = {2}", staticNumA, staticNumB, staticRandomResult);
+                    txtMath.Text = String.Format("{0} X {1} = {2}", staticNumA, staticNumB, staticRandomResult);
                 }
                 else
-                    txtMath.Text = String.Format("{0} * {1} = {2}", staticNumA, staticNumB, staticResult);
+                    txtMath.Text = String.Format("{0} X {1} = {2}", staticNumA, staticNumB, staticResult);
             }
             if (value == 4)// /
             {
@@ -181,10 +181,10 @@ namespace MathsGame.View
 
                 if (mode == 0)
                 {
-                    txtMath.Text = String.Format("{0} / {1} = {2}", staticNumA, staticNumB, staticRandomResult);
+                    txtMath.Text = String.Format("{0} ÷ {1} = {2}", staticNumA, staticNumB, staticRandomResult);
                 }
                 else
-                    txtMath.Text = String.Format("{0} / {1} = {2}", staticNumA, staticNumB, staticResult);
+                    txtMath.Text = String.Format("{0} ÷ {1} = {2}", staticNumA, staticNumB, staticResult);
             }
             setupProgressBar(); // restarts the progress bar for the next question
         }
