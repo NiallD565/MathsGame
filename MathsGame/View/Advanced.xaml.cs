@@ -68,7 +68,7 @@ namespace MathsGame.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += PlayAdvanced_BackRequested;
-            highScore = int.Parse(SimpleMaths.Maths.LoadSettings("HighScore"));
+            highScore = int.Parse(SimpleMaths.Maths.LoadSettings("highscore"));
             txtHighScore.Text = String.Format("Highscore:(0)", highScore);
             dispatcherTimer = null;
             Playing();

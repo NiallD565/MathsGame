@@ -36,7 +36,6 @@ namespace MathsGame
             var mode = SimpleMaths.Maths.LoadSettings("mode").ToString();
 
             txtHighscore.Text = "High Score: " + SimpleMaths.Maths.LoadSettings("highscore").ToString();
-
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -62,8 +61,8 @@ namespace MathsGame
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-
-            //Frame.Navigate(typeof(PlaySingle));
+            //Frame.Navigate(typeof(View.Advanced));// for testing 
+            //Frame.Navigate(typeof(PlaySingle));// for testing 
 
             if (SimpleMaths.Maths.mode == 0)// depending on which mode is selected the user will be directed to the appropriate playing page
                 Frame.Navigate(typeof(View.PlaySingle));

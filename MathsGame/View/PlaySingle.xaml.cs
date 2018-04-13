@@ -34,12 +34,13 @@ namespace MathsGame.View
 
         private void setupProgressBar()
         {
+            // initialise the timer to begin the countdown
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             dispatcherTimer.Start();
 
-            progressBar.Value = 9999;
+            progressBar.Value = 9999;// set the value to max
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -58,12 +59,13 @@ namespace MathsGame.View
 
         private void DispatcherTimer_Tick(object sender, object e)
         {
+            // subtracts the value of the speed set in the options from the progress every tick
             progressBar.Value -= SimpleMaths.Maths.speed;
             if (progressBar.Value <= 0)
             {
-                dispatcherTimer.Stop();
-                dispatcherTimer = null;
-
+                dispatcherTimer.Stop();// timer is stopped
+                dispatcherTimer = null;// timer is set to 0
+                // Navigate to game over page and pass the score to the OnNavigate constructor arguements to be set to the new highscore
                 Frame.Navigate(typeof(GameOver), Score.ToString());
             }
         }
@@ -71,8 +73,8 @@ namespace MathsGame.View
         private async void PlaySingle_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
         {
             e.Handled = true;
-            dispatcherTimer.Stop();
-            dispatcherTimer = null;
+            dispatcherTimer.Stop();// timer is stopped
+            dispatcherTimer = null;// timer is set to 0
 
             var msg = new MessageDialog("Are you handsome?");
             var okBtn = new UICommand("Yes");
